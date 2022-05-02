@@ -40,11 +40,13 @@
   --img-background: rgba(47, 48, 58, 0.8);
   --timing: cubic-bezier(0.4, 0, 0.2, 1);
 
+/*########## ICONS COLOR ############*/
   --color-back: transparent;
   --color-social: currentColor;
   --color-clients: currentColor;
   --color-social-footer: currentColor;
   --color-mail: currentColor;
+  --color-close: #eaeaea;
 }
 body {
   font-family: var(--main-font);
@@ -481,18 +483,16 @@ body {
   transform: scale(0,0);
   transition: transform 250ms var(--timing),opacity 250ms var(--timing);
 }
-.mod-btn {
+.close-button{
   position: absolute;
   top: 8px;
   right: 8px;
-  display: block;
   padding: 0;
   border: none;
-  background-color: transparent;
-  cursor: pointer;
   width: 30px;
   height: 30px;
-  background-image: url("../images/icon/close.svg");
+  border-radius: 50%;
+  cursor: pointer;
 }
 .modal {
   position: absolute;
