@@ -39,6 +39,7 @@
   --color-social-footer: rgba(255, 255, 255, 0.1);
   --img-background: rgba(47, 48, 58, 0.8);
   --timing: cubic-bezier(0.4, 0, 0.2, 1);
+  --send-button-back: #188CE8;
 
 /*########## ICONS COLOR ############*/
   --color-back: transparent;
@@ -47,6 +48,7 @@
   --color-social-footer: currentColor;
   --color-mail: currentColor;
   --color-close: #eaeaea;
+  --color-plus: currentColor;
 }
 body {
   font-family: var(--main-font);
@@ -558,6 +560,11 @@ cursor: pointer;
   height: 30px;
   border-radius: 50%;
   cursor: pointer;
+  transition: color 250ms var(--timing);
+}
+.close-button:hover,
+.close-button:focus {
+  color: var(--accent-color);
 }
 .modal {
   position: absolute;
@@ -589,10 +596,12 @@ margin-bottom: 12px;
 margin-top: 0;
 }
 .modal-form .label {
+  position: relative;
 font-size: 12px;
 line-height: 1.16;
 letter-spacing: 0.01em;
 color: var(--secondary-color);
+cursor: pointer;
 }
 .modal-form .input {
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -604,6 +613,12 @@ color: var(--secondary-color);
   padding-left: 42px;
   padding-top: 12px;
   padding-bottom: 12px;
+  cursor: pointer;
+  transition: border 250ms var(--timing);
+}
+.modal-form .input:hover,
+.modal-form .input:focus {
+border: 1px solid var(--accent-color);
 }
 .area {
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -615,6 +630,34 @@ resize: none;
 margin-top: 4px;
 padding: 12px 16px;
   margin-bottom: 20px;
+  cursor: pointer;
+  transition: border 250ms var(--timing);
+}
+.area:hover,
+.area:focus {
+border: 1px solid var(--accent-color);
+}
+::placeholder {
+font-size: 12px;
+line-height: 1.16;
+letter-spacing: 0.01em;
+color: rgba(117, 117, 117, 0.5);
+}
+.input-check {
+  margin-left: 17px;
+}
+.label-check {
+font-size: 14px;
+line-height: 1.71;
+letter-spacing: 0.03em;
+color: var(--secondary-color);
+}
+.license-link {
+font-size: 14px;
+line-height: 1.71;
+letter-spacing: 0.03em;
+text-decoration-line: underline;
+color: var(--accent-color);
 }
 .send-button {
 font-weight: 700;
@@ -632,7 +675,24 @@ padding: 10px 56px;
   background: var(--accent-color);
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 border-radius: 4px;
+border-color: transparent;
+cursor: pointer;
 }
+.send-button:hover,
+.send-button:focus {
+background: var(--send-button-back);
+}
+.icon-form {
+  position: absolute;
+  top: 28px;
+  left: 12px;
+  transition: fill 250ms var(--timing);
+}
+.modal-form .input:hover~.icon-form,
+.modal-form .input:focus~.icon-form {
+  fill: var(--accent-color);
+}
+
 /*########## PORTFOLIO (PAGE) ############*/
 .hidden {
   display: none;
